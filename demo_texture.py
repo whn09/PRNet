@@ -75,9 +75,9 @@ def texture_editing(prn, args):
     vis_min = np.min(vis_ind, 0)
     vis_max = np.max(vis_ind, 0)
     center = (int((vis_min[1] + vis_max[1]) / 2 + 0.5), int((vis_min[0] + vis_max[0]) / 2 + 0.5))
-    imsave(args.output_path[:-4]+'_new_image'+args.output_path[-4:], new_image)
-    imsave(args.output_path[:-4]+'_image'+args.output_path[-4:], image)
-    imsave(args.output_path[:-4]+'_face_mask'+args.output_path[-4:], face_mask)
+    # imsave(args.output_path[:-4]+'_new_image'+args.output_path[-4:], new_image)
+    # imsave(args.output_path[:-4]+'_image'+args.output_path[-4:], image)
+    # imsave(args.output_path[:-4]+'_face_mask'+args.output_path[-4:], face_mask)
     output = cv2.seamlessClone((new_image * 255).astype(np.uint8), (image * 255).astype(np.uint8),
                                # (face_mask * 255).astype(np.uint8), center, cv2.NORMAL_CLONE)
                                (face_mask * 255).astype(np.uint8), center, cv2.MIXED_CLONE)
